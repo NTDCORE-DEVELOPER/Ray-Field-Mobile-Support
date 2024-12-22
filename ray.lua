@@ -63,47 +63,47 @@ local RayfieldLibrary = {
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		},
 
-		Ocean = {
-			TextColor = Color3.fromRGB(230, 240, 240),
+		Horizon = {
+    TextColor = Color3.fromRGB(240, 245, 255),  -- A soft off-white for text, like a soft sky.
 
-			Background = Color3.fromRGB(20, 30, 30),
-			Topbar = Color3.fromRGB(25, 40, 40),
-			Shadow = Color3.fromRGB(15, 20, 20),
+    Background = Color3.fromRGB(30, 40, 50),  -- Deep ocean blue with a touch of nightfall.
+    Topbar = Color3.fromRGB(50, 70, 90),  -- A soft gradient of twilight sky, transitioning to deep blues.
+    Shadow = Color3.fromRGB(25, 35, 45),  -- Dark, subtle shadow that feels like the evening sky.
 
-			NotificationBackground = Color3.fromRGB(25, 35, 35),
-			NotificationActionsBackground = Color3.fromRGB(230, 240, 240),
+    NotificationBackground = Color3.fromRGB(60, 80, 100),  -- A serene dusk color for notifications.
+    NotificationActionsBackground = Color3.fromRGB(250, 250, 255),  -- Light, airy white for action areas, like clouds.
 
-			TabBackground = Color3.fromRGB(40, 60, 60),
-			TabStroke = Color3.fromRGB(50, 70, 70),
-			TabBackgroundSelected = Color3.fromRGB(100, 180, 180),
-			TabTextColor = Color3.fromRGB(210, 230, 230),
-			SelectedTabTextColor = Color3.fromRGB(20, 50, 50),
+    TabBackground = Color3.fromRGB(60, 95, 125),  -- Light blue with a touch of warm, golden hue.
+    TabStroke = Color3.fromRGB(90, 115, 145),  -- A soft stroke, reminiscent of horizon light.
+    TabBackgroundSelected = Color3.fromRGB(160, 200, 220),  -- A vibrant yet soft sunrise color.
+    TabTextColor = Color3.fromRGB(255, 255, 255),  -- Crisp white for clarity and freshness.
+    SelectedTabTextColor = Color3.fromRGB(30, 50, 60),  -- Deep blue accents for selected tab text.
 
-			ElementBackground = Color3.fromRGB(30, 50, 50),
-			ElementBackgroundHover = Color3.fromRGB(40, 60, 60),
-			SecondaryElementBackground = Color3.fromRGB(30, 45, 45),
-			ElementStroke = Color3.fromRGB(45, 70, 70),
-			SecondaryElementStroke = Color3.fromRGB(40, 65, 65),
+    ElementBackground = Color3.fromRGB(70, 100, 130),  -- Subtle sea-like tones for elements.
+    ElementBackgroundHover = Color3.fromRGB(90, 120, 150),  -- Lighter tones for a warm sunset effect.
+    SecondaryElementBackground = Color3.fromRGB(60, 90, 120),  -- A deeper secondary color to complement the elements.
+    ElementStroke = Color3.fromRGB(100, 140, 170),  -- Smooth stroke highlighting elements.
+    SecondaryElementStroke = Color3.fromRGB(90, 130, 160),  -- A softer stroke for secondary elements.
 
-			SliderBackground = Color3.fromRGB(0, 110, 110),
-			SliderProgress = Color3.fromRGB(0, 140, 140),
-			SliderStroke = Color3.fromRGB(0, 160, 160),
+    SliderBackground = Color3.fromRGB(60, 130, 180),  -- A smooth, calming sky blue.
+    SliderProgress = Color3.fromRGB(90, 150, 200),  -- A tranquil progression, like the sky at dawn.
+    SliderStroke = Color3.fromRGB(120, 180, 230),  -- A bright, clear border that guides the user.
 
-			ToggleBackground = Color3.fromRGB(30, 50, 50),
-			ToggleEnabled = Color3.fromRGB(0, 130, 130),
-			ToggleDisabled = Color3.fromRGB(70, 90, 90),
-			ToggleEnabledStroke = Color3.fromRGB(0, 160, 160),
-			ToggleDisabledStroke = Color3.fromRGB(85, 105, 105),
-			ToggleEnabledOuterStroke = Color3.fromRGB(50, 100, 100),
-			ToggleDisabledOuterStroke = Color3.fromRGB(45, 65, 65),
+    ToggleBackground = Color3.fromRGB(70, 110, 140),  -- Soft, peaceful blues for the toggle background.
+    ToggleEnabled = Color3.fromRGB(60, 140, 190),  -- A vivid blue to represent an active, positive state.
+    ToggleDisabled = Color3.fromRGB(120, 150, 180),  -- A more muted blue for inactive, restful state.
+    ToggleEnabledStroke = Color3.fromRGB(60, 160, 210),  -- A bright, confident border for the active toggle.
+    ToggleDisabledStroke = Color3.fromRGB(130, 160, 190),  -- Softer border for the disabled state.
+    ToggleEnabledOuterStroke = Color3.fromRGB(100, 160, 210),  -- A subtle outer glow that enhances the toggle.
+    ToggleDisabledOuterStroke = Color3.fromRGB(120, 150, 180),  -- A gentle stroke for the disabled toggle.
 
-			DropdownSelected = Color3.fromRGB(30, 60, 60),
-			DropdownUnselected = Color3.fromRGB(25, 40, 40),
+    DropdownSelected = Color3.fromRGB(70, 110, 150),  -- A harmonious blue that’s easy on the eyes.
+    DropdownUnselected = Color3.fromRGB(55, 80, 110),  -- A muted blue for unselected options.
 
-			InputBackground = Color3.fromRGB(30, 50, 50),
-			InputStroke = Color3.fromRGB(50, 70, 70),
-			PlaceholderColor = Color3.fromRGB(140, 160, 160)
-		},
+    InputBackground = Color3.fromRGB(70, 100, 130),  -- A soft gradient that feels like the sky at dusk.
+    InputStroke = Color3.fromRGB(90, 130, 160),  -- A refined stroke that enhances the input field.
+    PlaceholderColor = Color3.fromRGB(160, 180, 210)  -- A gentle placeholder color, like the soft light of dawn.
+},
 
 		AmberGlow = {
 			TextColor = Color3.fromRGB(255, 245, 230),
@@ -1206,7 +1206,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	if not correctBuild and not Settings.DisableBuildWarnings then
 		task.delay(3, 
 			function() 
-				RayfieldLibrary:Notify({Title = 'Build Mismatch', Content = 'Rayfield may encounter issues as you are running an incompatible interface version ('.. ((Rayfield:FindFirstChild('Build') and Rayfield.Build.Value) or 'No Build') ..').\n\nThis version of Rayfield is intended for interface build '..InterfaceBuild..'.\n\nTry rejoining and then run the script twice.', Image = 4335487866, Duration = 15})		
+				--RayfieldLibrary:Notify({Title = 'Build Mismatch', Content = 'Rayfield may encounter issues as you are running an incompatible interface version ('.. ((Rayfield:FindFirstChild('Build') and Rayfield.Build.Value) or 'No Build') ..').\n\nThis version of Rayfield is intended for interface build '..InterfaceBuild..'.\n\nTry rejoining and then run the script twice.', Image = 4335487866, Duration = 15})		
 			end)
 	end
 	
@@ -1227,7 +1227,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Interface Suite"
 
 	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = "Rayfield UI"
+		LoadingFrame.Version.Text = "Horizon: Beyond the limits"
 	end
 	
 	if Settings.Icon and Settings.Icon ~= 0 and Topbar:FindFirstChild('Icon') then
